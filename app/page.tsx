@@ -1,6 +1,16 @@
 import getDatabase from "@/notion/lib/getDatabase";
 import { PageObjectResponse } from "@notionhq/client/build/src/api-endpoints";
 
+interface TitleProperty {
+  type: "title";
+  title: Array<{ plain_text: string }>;
+}
+
+interface DateProperty {
+  type: "date";
+  date: { start: string } | null;
+}
+
 export default async function Home() {
   const database = await getDatabase();
 
@@ -13,8 +23,14 @@ export default async function Home() {
 
           return (
             <li key={id} className="flex gap-4">
-              <div>{properties.Title?.title[0]?.plain_text}</div>
-              <div>{properties.Published?.date?.start}</div>
+              <div>
+                {(properties.Title as unknown as TitleProperty)?.title?.[0]
+                  ?.plain_text || "无标题"}
+              </div>
+              <div>
+                {(properties.Published as unknown as DateProperty)?.date
+                  ?.start || "未发布"}
+              </div>
             </li>
           );
         })}

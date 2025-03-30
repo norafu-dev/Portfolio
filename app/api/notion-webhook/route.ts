@@ -41,11 +41,12 @@ export async function POST(req: NextRequest) {
     const payload = JSON.parse(rawBody);
 
     // get the verification token from the payload, and set the NOTION_WEBHOOK_SECRET
-    // !!! delete this log in the production environment !!!
+    /*
     if (payload.verification_token) {
       console.log("verification_token:", payload.verification_token);
       return new Response(null, { status: 200 });
     }
+      */
 
     // validate if the request is from notion
     const isValid = verifyNotionRequest(req, rawBody);
