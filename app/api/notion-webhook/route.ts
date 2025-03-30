@@ -34,11 +34,13 @@ const verifyNotionRequest = (req: NextRequest, body: string) => {
     return false;
   }
 };
-
 export async function POST(req: NextRequest) {
+  console.log("received Notion webhook:");
   try {
     const rawBody = await req.text();
     const payload = JSON.parse(rawBody);
+
+    console.log(payload.status);
 
     // get the verification token from the payload, and set the NOTION_WEBHOOK_SECRET
     /*
@@ -46,7 +48,7 @@ export async function POST(req: NextRequest) {
       console.log("verification_token:", payload.verification_token);
       return new Response(null, { status: 200 });
     }
-      */
+    */
 
     // validate if the request is from notion
     const isValid = verifyNotionRequest(req, rawBody);
