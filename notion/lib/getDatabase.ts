@@ -14,7 +14,7 @@ const getDatabase = unstable_cache(
       },
       sorts: [
         {
-          property: "Published Date",
+          property: "Published",
           direction: "descending",
         },
       ],
