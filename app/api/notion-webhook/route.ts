@@ -21,7 +21,7 @@ const verifyNotionRequest = (req: NextRequest, body: string) => {
   // compute the hmac of the request body
   const hmac = crypto.createHmac("sha256", signingSecret);
   hmac.update(body);
-  const computedSignature = hmac.digest("hex");
+  const computedSignature = `sha256=${hmac.digest("hex")}`;
 
   // compare the computed signature with the notion signature
   try {
