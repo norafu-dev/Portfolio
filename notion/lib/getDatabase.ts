@@ -3,7 +3,7 @@ import { unstable_cache } from "next/cache";
 
 const databaseId = process.env.NOTION_DATABASE_ID as string;
 
-// use unstable_cache to cache the database, use cache tag to invalidate the cache
+// use unstable_cache to cache the database results, use cache tag to invalidate the cache
 const getDatabase = unstable_cache(
   async () => {
     const response = await notion.databases.query({

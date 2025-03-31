@@ -59,8 +59,13 @@ export async function POST(req: NextRequest) {
     // log the webhook event (for debugging)
     console.log("received Notion webhook:", {
       eventType: payload.type,
-      timestamp: new Date().toISOString(),
-      databaseId: payload.database?.id || "unknown",
+      timestamp: new Date(payload.timestamp).toLocaleString(),
+      pageId:
+        payload.type === "comment.created"
+          ? // the page that the comment is on
+            payload.data.page_id
+          : // the database that changed page is in
+            payload.data.parent_id,
     });
 
     // invalidate the cache tag
