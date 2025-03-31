@@ -40,8 +40,6 @@ export async function POST(req: NextRequest) {
     const rawBody = await req.text();
     const payload = JSON.parse(rawBody);
 
-    console.log(payload.status);
-
     // get the verification token from the payload, and set the NOTION_WEBHOOK_SECRET
 
     if (payload.verification_token) {
@@ -56,30 +54,30 @@ export async function POST(req: NextRequest) {
       return NextResponse.json({ error: "invalid signature" }, { status: 401 });
     }
 
+    const pageId =
+      payload.type === "comment.created"
+        ? // the page that the comment is on
+          payload.data.page_id
+        : // the database that changed page is in
+          payload.data.parent.id;
+
     // log the webhook event (for debugging)
     console.log("received Notion webhook:", {
       eventType: payload.type,
-      // 转为日本时间
+      // switch to japan time
       timestamp: new Date(payload.timestamp).toLocaleString("ja-JP", {
         timeZone: "Asia/Tokyo",
       }),
-      pageId:
-        payload.type === "comment.created"
-          ? // the page that the comment is on
-            payload.data.page_id
-          : // the database that changed page is in
-            payload.data.parent.id,
+      pageId,
     });
 
     // invalidate the cache tag
-    revalidateTag("notion-database");
-    console.log("invalidated cache tag: notion-database");
+    revalidateTag(pageId);
 
     // return the success response
     return NextResponse.json({
       success: true,
-      message: "database cache revalidated successfully",
-      timestamp: new Date().toISOString(),
+      message: `cache revalidated: ${pageId}`,
     });
   } catch (error) {
     // error handling

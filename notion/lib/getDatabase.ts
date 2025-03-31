@@ -26,7 +26,7 @@ const getDatabase = unstable_cache(
   },
   [databaseId],
   {
-    tags: ["notion-database"],
+    tags: [databaseId],
     revalidate: 60 * 60 * 24,
   }
 );
