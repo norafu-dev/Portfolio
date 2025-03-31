@@ -59,13 +59,16 @@ export async function POST(req: NextRequest) {
     // log the webhook event (for debugging)
     console.log("received Notion webhook:", {
       eventType: payload.type,
-      timestamp: new Date(payload.timestamp).toLocaleString(),
+      // 转为日本时间
+      timestamp: new Date(payload.timestamp).toLocaleString("ja-JP", {
+        timeZone: "Asia/Tokyo",
+      }),
       pageId:
         payload.type === "comment.created"
           ? // the page that the comment is on
             payload.data.page_id
           : // the database that changed page is in
-            payload.data.parent_id,
+            payload.data.parent.id,
     });
 
     // invalidate the cache tag
