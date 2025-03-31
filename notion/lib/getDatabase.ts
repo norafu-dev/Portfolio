@@ -1,7 +1,8 @@
+import { idToUuid } from "@/lib/utils";
 import notion from "@/notion/lib/client";
 import { unstable_cache } from "next/cache";
 
-const databaseId = process.env.NOTION_DATABASE_ID as string;
+const databaseId = idToUuid(process.env.NOTION_DATABASE_ID);
 
 // use unstable_cache to cache the database results, use cache tag to invalidate the cache
 const getDatabase = unstable_cache(
