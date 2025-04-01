@@ -1,4 +1,5 @@
 import getDatabase from "@/notion/lib/getDatabase";
+import Link from "next/link";
 
 const page = async () => {
   const database = await getDatabase();
@@ -10,11 +11,15 @@ const page = async () => {
           return (
             <li key={post.pageId} className="space-y-3">
               <div className="flex justify-between">
-                <p className="border px-5 rounded-lg">{post.category}</p>
+                <p className="flex items-center px-3 text-xs border rounded-lg">
+                  {post.category}
+                </p>
                 <p>{post.publishDate}</p>
               </div>
-              <h3 className="text-lg">{post.title}</h3>
-              <p className="text-right"># {post.tags.join(", ")}</p>
+              <Link href={`/blog/${post.slug}`}>
+                <h3>{post.title}</h3>
+              </Link>
+              <p className="text-xs text-right"># {post.tags.join(", ")}</p>
               <div className="h-[1px] border"></div>
             </li>
           );

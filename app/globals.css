@@ -1,26 +1,35 @@
+@import url("https://cdn.jsdelivr.net/npm/lxgw-wenkai-webfont@1.7.0/style.min.css");
 @import "tailwindcss";
 
 :root {
-  --background: #f4f1ea;
+  --background: #fffefa;
   --foreground: #31322d;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --font-lxgw: "LXGW WenKai";
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
     --background: #4e4e4e;
-    --foreground: #31322d;
+    --foreground: #fffcf7;
   }
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-lxgw);
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-lxgw: var(--font-lxgw);
+}
+
+@utility text-semibold {
+  -webkit-text-stroke: 0.2px currentColor;
+}
+
+@utility text-bold {
+  -webkit-text-stroke: 0.4px currentColor;
 }

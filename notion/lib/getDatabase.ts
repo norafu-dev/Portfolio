@@ -28,6 +28,7 @@ const getDatabase = unstable_cache(
       return {
         pageId: item.id,
         title: item.properties.Title.title[0].plain_text,
+        slug: item.properties.Slug.rich_text[0].plain_text,
         publishDate: item.properties.Published.date?.start,
         category: item.properties.Category.select?.name,
         tags: item.properties.Tags.multi_select.map((tag: any) => tag.name),
