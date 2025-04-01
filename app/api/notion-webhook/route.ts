@@ -2,7 +2,6 @@ import { NextRequest, NextResponse } from "next/server";
 import { revalidateTag } from "next/cache";
 import crypto from "crypto";
 
-// verify the request from notion
 const verifyNotionRequest = (req: NextRequest, body: string) => {
   // get the signing secret from the environment variables
   const signingSecret = process.env.NOTION_WEBHOOK_SECRET;
@@ -34,8 +33,8 @@ const verifyNotionRequest = (req: NextRequest, body: string) => {
     return false;
   }
 };
+
 export async function POST(req: NextRequest) {
-  console.log("received Notion webhook:");
   try {
     const rawBody = await req.text();
     const payload = JSON.parse(rawBody);
@@ -80,7 +79,6 @@ export async function POST(req: NextRequest) {
       message: `cache revalidated: ${pageId}`,
     });
   } catch (error) {
-    // error handling
     console.error("error handling Notion webhook:", error);
     return NextResponse.json(
       { error: "internal server error", message: (error as Error).message },
