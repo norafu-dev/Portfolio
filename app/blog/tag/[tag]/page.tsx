@@ -1,10 +1,15 @@
 import getDatabase from "@/notion/lib/getDatabase";
 
-export default async function TagPage({ params }: { params: { tag: string } }) {
+export default async function TagPage({
+  params,
+}: {
+  params: Promise<{ tag: string }>;
+}) {
   const database = await getDatabase();
+  const { tag } = await params;
 
   // decode non-encoded category
-  const decodedTag = decodeURIComponent(params.tag);
+  const decodedTag = decodeURIComponent(tag);
 
   const posts = database.filter((post) => {
     return post.tags.includes(decodedTag);
