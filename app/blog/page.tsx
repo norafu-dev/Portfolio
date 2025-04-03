@@ -1,26 +1,58 @@
 import getDatabase from "@/notion/lib/getDatabase";
+import Image from "next/image";
 import Link from "next/link";
 
 const page = async () => {
   const database = await getDatabase();
 
   return (
-    <main className="flex flex-col items-center">
-      <ul className="flex flex-col gap-8 w-md">
+    <main className="flex flex-col items-center max-w-3xl mx-auto">
+      <ul className="flex items-start gap-4">
+        <li>
+          <button>Latest</button>
+        </li>
+        <li>
+          <button>Trending</button>
+        </li>
+      </ul>
+      <ul className="flex flex-col w-full gap-4">
         {database.map((post) => {
           return (
-            <li key={post.pageId} className="space-y-3">
-              <div className="flex justify-between">
-                <p className="flex items-center px-3 text-xs border rounded-lg">
-                  {post.category}
-                </p>
-                <p>{post.publishDate}</p>
+            <li
+              key={post.pageId}
+              className="flex justify-between py-4 border-b border-gray-400 gap-x-6 group"
+            >
+              <figure className="relative w-1/4 h-24 overflow-hidden rounded-xl">
+                <Image
+                  src="/images/code.jpg"
+                  alt={post.title}
+                  fill
+                  className="object-cover transition-all duration-300 group-hover:scale-110"
+                />
+              </figure>
+              <div className="flex flex-col justify-between flex-1">
+                {/* category and publish date */}
+                <div className="flex justify-between text-sm">
+                  <Link href={`/blog/category/${post.category}`}>
+                    <p className="flex items-center px-3 py-0.5 text-xs border rounded-sm">
+                      {post.category}
+                    </p>
+                  </Link>
+                  <p>{post.publishDate}</p>
+                </div>
+                {/* title */}
+                <Link href={`/blog/${post.slug}`}>
+                  <h3>{post.title}</h3>
+                </Link>
+                {/* tags */}
+                <ul className="flex justify-end gap-2 text-sm">
+                  {post.tags.map((tag) => (
+                    <li key={tag}>
+                      <Link href={`/blog/tag/${tag}`}>#{tag}</Link>
+                    </li>
+                  ))}
+                </ul>
               </div>
-              <Link href={`/blog/${post.slug}`}>
-                <h3>{post.title}</h3>
-              </Link>
-              <p className="text-xs text-right"># {post.tags.join(", ")}</p>
-              <div className="h-[1px] border"></div>
             </li>
           );
         })}

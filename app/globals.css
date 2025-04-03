@@ -2,7 +2,7 @@
 @import "tailwindcss";
 
 :root {
-  --background: #fffefa;
+  --background: #fffdfa;
   --foreground: #31322d;
   --font-lxgw: "LXGW WenKai";
 }
@@ -10,7 +10,7 @@
 @media (prefers-color-scheme: dark) {
   :root {
     --background: #4e4e4e;
-    --foreground: #fffcf7;
+    --foreground: #fffefa;
   }
 }
 
