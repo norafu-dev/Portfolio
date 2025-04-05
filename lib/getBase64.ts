@@ -11,7 +11,7 @@ const getBase64 = async (url: string) => {
     return base64;
   } catch (error) {
     console.log("Failed to fetch image", error);
-    return "@/public/placeholder.webp";
+    return "@/public/images/placeholder.webp";
   }
 };
 

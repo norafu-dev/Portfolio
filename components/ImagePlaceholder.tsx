@@ -11,20 +11,12 @@ const ImagePlaceholder = async ({
   alt: string;
   className?: string;
 }) => {
-  if (!url)
-    return (
-      <Image
-        src={placeholder}
-        alt="placeholder"
-        placeholder="blur"
-        className={className}
-        fill
-      />
-    );
-  const base64 = await getBase64(url);
+  let base64;
+  if (url) base64 = await getBase64(url);
+
   return (
     <Image
-      src={url}
+      src={url || placeholder}
       alt={alt}
       placeholder="blur"
       blurDataURL={base64}
