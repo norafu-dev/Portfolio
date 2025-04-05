@@ -6,7 +6,7 @@ const page = async () => {
   const database = await getDatabase();
 
   return (
-    <main className="flex flex-col items-center max-w-3xl mx-auto">
+    <main className="flex flex-col items-center max-w-2xl mx-auto">
       <ul className="flex items-start gap-4">
         <li>
           <button>Latest</button>
@@ -24,10 +24,13 @@ const page = async () => {
             >
               <figure className="relative w-1/4 h-24 overflow-hidden rounded-xl">
                 <Image
-                  src="/images/code.jpg"
+                  src={post.cover ? post.cover : "/images/code.jpg"}
                   alt={post.title}
                   fill
-                  className="object-cover transition-all duration-300 group-hover:scale-110"
+                  sizes="(max-width: 768px) 25vw, 25vw"
+                  loading="eager"
+                  priority={true}
+                  className="object-cover transition-all duration-300 group-hover:scale-105 ease-in-out"
                 />
               </figure>
               <div className="flex flex-col justify-between flex-1">
