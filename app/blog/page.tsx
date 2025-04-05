@@ -1,6 +1,6 @@
 import getDatabase from "@/notion/lib/getDatabase";
-import Image from "next/image";
 import Link from "next/link";
+import ImagePlaceholder from "@/components/ImagePlaceholder";
 
 const page = async () => {
   const database = await getDatabase();
@@ -23,14 +23,10 @@ const page = async () => {
               className="flex justify-between py-4 border-b border-gray-400 gap-x-6 group"
             >
               <figure className="relative w-1/4 h-24 overflow-hidden rounded-xl">
-                <Image
-                  src={post.cover ? post.cover : "/images/code.jpg"}
+                <ImagePlaceholder
+                  url={post.cover}
                   alt={post.title}
-                  fill
-                  sizes="(max-width: 768px) 25vw, 25vw"
-                  loading="eager"
-                  priority={true}
-                  className="object-cover transition-all duration-300 group-hover:scale-105 ease-in-out"
+                  className="object-cover transition-all duration-300 group-hover:scale-105"
                 />
               </figure>
               <div className="flex flex-col justify-between flex-1">

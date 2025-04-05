@@ -39,7 +39,7 @@ const getDatabase = unstable_cache(
       };
     });
 
-    console.dir(results, { depth: null });
+    // console.dir(results, { depth: null });
 
     return results;
   },

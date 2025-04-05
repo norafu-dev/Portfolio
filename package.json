@@ -12,8 +12,10 @@
     "@notionhq/client": "^2.3.0",
     "crypto": "^1.0.1",
     "next": "15.2.3",
+    "plaiceholder": "^3.0.0",
     "react": "^19.0.0",
-    "react-dom": "^19.0.0"
+    "react-dom": "^19.0.0",
+    "sharp": "^0.34.0"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",
