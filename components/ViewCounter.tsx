@@ -27,7 +27,7 @@ const ViewCounter = ({
         }
 
         // 获取最新计数
-        let { data, error } = await supabase
+        const { data, error } = await supabase
           .from("views")
           .select("count")
           .match({ page_id: pageId })
