@@ -9,9 +9,11 @@ const page = async ({ params }: { params: Promise<{ slug: string }> }) => {
     return <div>Post not found</div>;
   }
   return (
-    <div>
-      <h1>{post?.title}</h1>
-      <ViewCounter pageId={post?.pageId} slug={slug} />
+    <div className="max-w-2xl mx-auto">
+      <h1 className="text-center text-2xl">{post?.title}</h1>
+      <div className="text-end">
+        <ViewCounter pageId={post?.pageId} slug={slug} />
+      </div>
     </div>
   );
 };
