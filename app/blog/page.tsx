@@ -7,7 +7,7 @@ const page = async () => {
 
   return (
     <main className="flex flex-col items-center max-w-2xl mx-auto">
-      <ul className="flex items-start gap-4">
+      <ul className="flex items-center justify-end w-full gap-4 mb-4">
         <li>
           <button>Latest</button>
         </li>
@@ -22,7 +22,7 @@ const page = async () => {
               key={post.pageId}
               className="flex justify-between py-4 border-b border-gray-400 gap-x-6 group"
             >
-              <figure className="relative w-1/4 h-24 overflow-hidden rounded-xl">
+              <figure className="relative w-1/4 h-24 overflow-hidden rounded-xl bg-gray-200/50">
                 <ImagePlaceholder
                   url={post.cover}
                   alt={post.title}

@@ -25,6 +25,8 @@ const getDatabase = unstable_cache(
       ],
     });
 
+    console.log("fetch data from notion");
+
     // console.dir(response.results, { depth: null });
 
     const results = response.results.map((item: any) => {
