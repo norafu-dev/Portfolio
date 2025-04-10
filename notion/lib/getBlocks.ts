@@ -1,10 +1,10 @@
 import notion from "@/notion/lib/client";
 import { unstable_cache } from "next/cache";
-import { BlockObjectResponse } from "@notionhq/client/build/src/api-endpoints";
+import { FilteredBlockResponse } from "@/notion/types";
 
 const getBlocks = (pageId: string) =>
   unstable_cache(
-    async (): Promise<> => {
+    async (): Promise<FilteredBlockResponse[]> => {
       const response = await notion.blocks.children.list({
         block_id: pageId,
       });

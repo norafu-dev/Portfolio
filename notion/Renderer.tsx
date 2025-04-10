@@ -1,13 +1,9 @@
 import getBlocks from "@/notion/lib/getBlocks";
-import {
-  PartialBlockObjectResponse,
-  BlockObjectResponse,
-} from "@notionhq/client/build/src/api-endpoints";
 import filteredData from "@/notion/data/data";
 
 const Renderer = async ({ pageId }: { pageId: string }) => {
   const getBlocksByPageId = getBlocks(pageId);
-  const blocks: BlockObjectResponse[] = await getBlocksByPageId();
+  const blocks = await getBlocksByPageId();
   const blockTypes: string[] = [];
 
   return (

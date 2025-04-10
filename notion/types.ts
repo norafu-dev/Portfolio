@@ -1,3 +1,5 @@
+import { BlockObjectResponse } from "@notionhq/client/build/src/api-endpoints";
+
 interface PageProps {
   pageId: string;
   title: string;
@@ -8,11 +10,17 @@ interface PageProps {
   tags: string[];
 }
 
-interface BlockProps {
-  id: string;
-  has_children: boolean;
-  type: string;
-}
+type FilteredBlockResponse = Omit<
+  BlockObjectResponse,
+  | "object"
+  | "parent"
+  | "created_time"
+  | "last_edited_time"
+  | "created_by"
+  | "last_edited_by"
+  | "archived"
+  | "in_trash"
+>;
 
 type ApiColor =
   | "default"
@@ -36,4 +44,4 @@ type ApiColor =
   | "pink_background"
   | "red_background";
 
-export type { PageProps };
+export type { PageProps, FilteredBlockResponse };
