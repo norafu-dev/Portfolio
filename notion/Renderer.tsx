@@ -3,11 +3,11 @@ import {
   PartialBlockObjectResponse,
   BlockObjectResponse,
 } from "@notionhq/client/build/src/api-endpoints";
+import filteredData from "@/notion/data/data";
 
-const NotionRenderer = async ({ pageId }: { pageId: string }) => {
+const Renderer = async ({ pageId }: { pageId: string }) => {
   const getBlocksByPageId = getBlocks(pageId);
-  const blocks: (PartialBlockObjectResponse | BlockObjectResponse)[] =
-    await getBlocksByPageId();
+  const blocks: BlockObjectResponse[] = await getBlocksByPageId();
   const blockTypes: string[] = [];
 
   return (
@@ -21,9 +21,9 @@ const NotionRenderer = async ({ pageId }: { pageId: string }) => {
       {blockTypes.map((type, index) => {
         return <div key={index}>{type}</div>;
       })}
-      <pre>{JSON.stringify(blocks, null, 2)}</pre>
+      <pre>{JSON.stringify(filteredData, null, 2)}</pre>
     </div>
   );
 };
 
-export default NotionRenderer;
+export default Renderer;

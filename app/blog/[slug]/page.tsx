@@ -1,6 +1,7 @@
 import getDatabase from "@/notion/lib/getDatabase";
 import ViewCounter from "@/components/ViewCounter";
-import NotionRenderer from "@/components/notion/NotionRenderer";
+import Renderer from "@/notion/Renderer";
+
 const page = async ({ params }: { params: Promise<{ slug: string }> }) => {
   const { slug } = await params;
   const database = await getDatabase();
@@ -14,7 +15,7 @@ const page = async ({ params }: { params: Promise<{ slug: string }> }) => {
       <div className="text-end">
         <ViewCounter pageId={post?.pageId} slug={slug} />
       </div>
-      <NotionRenderer pageId={post?.pageId} />
+      <Renderer pageId={post?.pageId} />
     </article>
   );
 };

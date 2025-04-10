@@ -1,5 +1,6 @@
 @import url("https://cdn.jsdelivr.net/npm/lxgw-wenkai-webfont@1.7.0/style.min.css");
 @import "tailwindcss";
+@import "./notion-blocks.css";
 
 :root {
   --background: #fffdfa;
@@ -20,7 +21,7 @@ body {
   font-family: var(--font-lxgw);
 }
 
-@theme inline {
+@theme {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --font-lxgw: var(--font-lxgw);
