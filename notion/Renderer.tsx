@@ -1,23 +1,28 @@
 import getBlocks from "@/notion/lib/getBlocks";
-import filteredData from "@/notion/data/data";
+import Toggle from "@/notion/blocks/Toggle";
 
 const Renderer = async ({ pageId }: { pageId: string }) => {
   const getBlocksByPageId = getBlocks(pageId);
   const blocks = await getBlocksByPageId();
   const blockTypes: string[] = [];
+  blocks.map((block) => {
+    if ("type" in block && !blockTypes.includes(block.type)) {
+      blockTypes.push(block.type);
+    }
+  });
 
   return (
-    <div>
-      {blocks.map((block) => {
-        if ("type" in block && !blockTypes.includes(block.type)) {
-          blockTypes.push(block.type);
-        }
-        return null;
-      })}
-      {blockTypes.map((type, index) => {
-        return <div key={index}>{type}</div>;
-      })}
-      <pre>{JSON.stringify(filteredData, null, 2)}</pre>
+    <div className="max-w-screen overflow-x-hidden">
+      {/* Block Types */}
+      <ul>
+        {blockTypes.map((type, index) => {
+          return <div key={index}>{type}</div>;
+        })}
+      </ul>
+      {/* Blocks Data */}
+      <Toggle title="Blocks">
+        <pre>{JSON.stringify(blocks, null, 2)}</pre>
+      </Toggle>
     </div>
   );
 };

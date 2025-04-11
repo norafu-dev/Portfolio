@@ -9,6 +9,8 @@ const getBlocks = (pageId: string) =>
         block_id: pageId,
       });
 
+      // console.log("fetch blocks from notion: " + pageId);
+
       const results = response.results.map((item: any) => {
         const {
           object,
