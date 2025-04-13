@@ -1,5 +1,4 @@
 import { RichTextItemResponse } from "@notionhq/client/build/src/api-endpoints";
-import Image from "next/image";
 
 export default (data: RichTextItemResponse) => {
   let result = data.plain_text;

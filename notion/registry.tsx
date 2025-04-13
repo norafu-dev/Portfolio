@@ -3,12 +3,14 @@ import { FilteredBlockResponse } from "@/notion/types";
 
 import { Heading1, Heading2, Heading3 } from "@/notion/blocks/Headings";
 import Paragraph from "@/notion/blocks/Paragraph";
+import Img from "@/notion/blocks/Img";
 
 export const blockComponents = {
   heading_1: Heading1,
   heading_2: Heading2,
   heading_3: Heading3,
   paragraph: Paragraph,
+  image: Img,
 };
 
 export const renderBlock = (block: FilteredBlockResponse) => {

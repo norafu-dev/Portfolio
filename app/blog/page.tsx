@@ -22,13 +22,12 @@ const page = async () => {
               key={post.pageId}
               className="flex justify-between py-4 border-b border-gray-400 gap-x-6 group"
             >
-              <figure className="relative w-1/4 h-24 overflow-hidden rounded-xl bg-gray-200/50">
-                <ImagePlaceholder
-                  url={post.cover}
-                  alt={post.title}
-                  className="object-cover transition-all duration-300 group-hover:scale-105"
-                />
-              </figure>
+              <ImagePlaceholder
+                url={post.cover}
+                alt={post.title}
+                containerClassName="relative w-1/4 h-24 overflow-hidden rounded-xl bg-gray-200/50"
+                imageClassName="transition-all duration-300 group-hover:scale-105"
+              />
               <div className="flex flex-col justify-between flex-1">
                 {/* category and publish date */}
                 <div className="flex justify-between text-sm">
