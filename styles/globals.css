@@ -1,6 +1,6 @@
 @import url("https://cdn.jsdelivr.net/npm/lxgw-wenkai-webfont@1.7.0/style.min.css");
 @import "tailwindcss";
-@import "./notion-blocks.css";
+@import "./notion.css";
 
 :root {
   --background: #fffdfa;
@@ -28,9 +28,9 @@ body {
 }
 
 @utility text-semibold {
-  -webkit-text-stroke: 0.2px currentColor;
+  -webkit-text-stroke: 0.15px currentColor;
 }
 
 @utility text-bold {
-  -webkit-text-stroke: 0.4px currentColor;
+  -webkit-text-stroke: 0.3px currentColor;
 }

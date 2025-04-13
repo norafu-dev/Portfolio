@@ -1,0 +1,174 @@
+/* Notion Blocks 样式 */
+
+/* 标题样式 */
+.notion-heading-1 {
+  @apply mb-4 text-4xl font-bold;
+}
+
+.notion-heading-2 {
+  @apply mb-3 text-3xl font-bold;
+}
+
+.notion-heading-3 {
+  @apply mb-2 text-2xl font-bold;
+}
+
+/* 段落样式 */
+.notion-paragraph {
+  @apply mb-4;
+}
+
+/* 列表样式 */
+.notion-bulleted-list {
+  @apply pl-6 mb-4 list-disc;
+}
+
+.notion-numbered-list {
+  @apply pl-6 mb-4 list-decimal;
+}
+
+/* 引用样式 */
+.notion-quote {
+  @apply pl-4 my-4 italic border-l-4 border-gray-300;
+}
+
+/* 图片样式 */
+.notion-image {
+  @apply my-4 rounded-md;
+}
+
+/* 折叠样式 */
+.notion-toggle {
+  @apply mb-2;
+}
+
+.notion-toggle-content {
+  @apply pl-6 mt-2;
+}
+
+/* 书签样式 */
+.notion-bookmark {
+  @apply p-4 my-4 border border-gray-200 rounded-md;
+}
+
+/* 文字颜色样式 */
+.notion-text-red {
+  @apply text-red-500;
+}
+
+.notion-text-blue {
+  @apply text-blue-500;
+}
+
+.notion-text-gray {
+  @apply text-gray-500;
+}
+
+.notion-bg-red {
+  @apply bg-red-100;
+}
+
+.notion-bg-blue {
+  @apply bg-blue-100;
+}
+
+.notion-bg-gray {
+  @apply bg-gray-100;
+}
+
+/* 
+type ApiColor =
+  | "default"
+  | "gray"
+  | "brown"
+  | "orange"
+  | "yellow"
+  | "green"
+  | "blue"
+  | "purple"
+  | "pink"
+  | "red"
+  | "default_background"
+  | "gray_background"
+  | "brown_background"
+  | "orange_background"
+  | "yellow_background"
+  | "green_background"
+  | "blue_background"
+  | "purple_background"
+  | "pink_background"
+  | "red_background";
+
+*/
+
+.notion-color-gray {
+  @apply text-gray-500;
+}
+
+.notion-color-brown {
+  @apply text-amber-500;
+}
+
+.notion-color-orange {
+  @apply text-orange-500;
+}
+
+.notion-color-yellow {
+  @apply text-yellow-500;
+}
+
+.notion-color-green {
+  @apply text-green-500;
+}
+
+.notion-color-blue {
+  @apply text-blue-500;
+}
+
+.notion-color-purple {
+  @apply text-purple-500;
+}
+
+.notion-color-pink {
+  @apply text-pink-500;
+}
+
+.notion-color-red {
+  @apply text-rose-400;
+}
+
+.notion-color-gray_background {
+  @apply bg-gray-100;
+}
+
+.notion-color-brown_background {
+  @apply bg-amber-100;
+}
+
+.notion-color-orange_background {
+  @apply bg-orange-100;
+}
+
+.notion-color-yellow_background {
+  @apply bg-yellow-100;
+}
+
+.notion-color-green_background {
+  @apply bg-green-100;
+}
+
+.notion-color-blue_background {
+  @apply bg-blue-100;
+}
+
+.notion-color-purple_background {
+  @apply bg-purple-100;
+}
+
+.notion-color-pink_background {
+  @apply bg-pink-100;
+}
+
+.notion-color-red_background {
+  @apply bg-rose-100;
+}

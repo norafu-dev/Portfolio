@@ -1,10 +1,14 @@
+import { Suspense } from "react";
 import getBlocks from "@/notion/lib/getBlocks";
 import Toggle from "@/notion/blocks/Toggle";
+import { renderBlock } from "@/notion/registry";
 
 const Renderer = async ({ pageId }: { pageId: string }) => {
   const getBlocksByPageId = getBlocks(pageId);
   const blocks = await getBlocksByPageId();
+
   const blockTypes: string[] = [];
+
   blocks.map((block) => {
     if ("type" in block && !blockTypes.includes(block.type)) {
       blockTypes.push(block.type);
@@ -16,9 +20,23 @@ const Renderer = async ({ pageId }: { pageId: string }) => {
       {/* Block Types */}
       <ul>
         {blockTypes.map((type, index) => {
-          return <div key={index}>{type}</div>;
+          return <li key={index}>{type}</li>;
         })}
       </ul>
+
+      {/* Block Renderers */}
+      {blocks.map((block) => {
+        return (
+          <Suspense
+            key={block.id}
+            fallback={
+              <div className="h-12 bg-gray-100 animate-pulse rounded-md my-2" />
+            }
+          >
+            {renderBlock(block)}
+          </Suspense>
+        );
+      })}
       {/* Blocks Data */}
       <Toggle title="Blocks">
         <pre>{JSON.stringify(blocks, null, 2)}</pre>
