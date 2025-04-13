@@ -2,11 +2,12 @@ import { Suspense } from "react";
 import getBlocks from "@/notion/lib/getBlocks";
 import Toggle from "@/notion/blocks/Toggle";
 import { renderBlock } from "@/notion/registry";
+import { processBlocks } from "@/notion/processBlocks";
 
 const Renderer = async ({ pageId }: { pageId: string }) => {
   const getBlocksByPageId = getBlocks(pageId);
   const blocks = await getBlocksByPageId();
-
+  const processedBlocks = processBlocks(blocks);
   const blockTypes: string[] = [];
 
   blocks.map((block) => {
@@ -25,7 +26,7 @@ const Renderer = async ({ pageId }: { pageId: string }) => {
       </ul>
 
       {/* Block Renderers */}
-      {blocks.map((block) => {
+      {processedBlocks.map((block) => {
         return (
           <Suspense
             key={block.id}

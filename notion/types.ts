@@ -1,4 +1,7 @@
-import { BlockObjectResponse } from "@notionhq/client/build/src/api-endpoints";
+import {
+  BlockObjectResponse,
+  NumberedListItemBlockObjectResponse,
+} from "@notionhq/client/build/src/api-endpoints";
 
 interface PageProps {
   pageId: string;

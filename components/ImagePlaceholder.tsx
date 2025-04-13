@@ -14,13 +14,12 @@ const ImagePlaceholder = async ({
   imageClassName?: string;
 }) => {
   let base64;
-  let aspectRatio = 16 / 9; // 默认宽高比
+  let aspectRatio = 3 / 4;
 
   if (url) {
     const data = await getBase64(url);
-    console.log(data);
     base64 = typeof data === "string" ? data : data.base64;
-    // 如果获取到了宽高比，则使用它
+
     if (typeof data !== "string" && data.aspectRatio) {
       aspectRatio = data.aspectRatio;
     }

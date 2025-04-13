@@ -134,7 +134,7 @@ type ApiColor =
 }
 
 .notion-color-red {
-  @apply text-rose-400;
+  @apply text-rose-600;
 }
 
 .notion-color-gray_background {

@@ -60,7 +60,7 @@ export default (data: RichTextItemResponse) => {
 
   if (data.annotations.code) {
     return (
-      <code className="p-1 mx-1 text-sm text-indigo-400 bg-gray-100 rounded-md">
+      <code className="p-1 mx-0.5 text-sm text-indigo-400 bg-gray-100 rounded-md">
         {result}
       </code>
     );

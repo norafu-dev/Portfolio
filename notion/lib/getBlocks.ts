@@ -14,7 +14,7 @@ const getBlocks = (pageId: string) =>
       const results = response.results.map((item: any) => {
         const {
           object,
-          parent,
+          // parent,
           created_time,
           last_edited_time,
           created_by,
@@ -26,6 +26,7 @@ const getBlocks = (pageId: string) =>
         return rest;
       });
 
+      console.dir(results, { depth: null });
       return results;
     },
     [pageId],
