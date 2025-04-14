@@ -9,7 +9,7 @@ interface NumberedListProps {
 
 const NumberedList = ({ numbered_list }: NumberedListProps) => {
   return (
-    <ol className="list-decimal pl-8 mb-2 space-y-1">
+    <ol className="pl-8 mb-3 space-y-2 list-decimal">
       {numbered_list.map((item) => (
         <li key={item.id} className="pl-1">
           {item.numbered_list_item.rich_text.map((text, index) => (

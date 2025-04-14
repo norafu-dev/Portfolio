@@ -3,7 +3,7 @@ import RichText from "./RichText";
 
 const Paragraph = (data: ParagraphBlockObjectResponse) => {
   return (
-    <p className="notion-paragraph">
+    <p className="mb-3">
       {data.paragraph.rich_text.map((item, index) => {
         return <RichText key={index} {...item} />;
       })}

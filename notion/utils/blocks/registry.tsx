@@ -10,6 +10,7 @@ import Paragraph from "@/notion/components/blocks/Paragraph";
 import Img from "@/notion/components/blocks/Img";
 import NumberedList from "@/notion/components/blocks/NumberList";
 import BulletList from "@/notion/components/blocks/BulletList";
+import Code from "@/notion/components/blocks/Code";
 
 export const blockComponents = {
   heading_1: Heading1,
@@ -19,6 +20,7 @@ export const blockComponents = {
   image: Img,
   numbered_list: NumberedList,
   bulleted_list: BulletList,
+  code: Code,
 };
 
 export const renderBlock = (block: ProcessedBlock) => {

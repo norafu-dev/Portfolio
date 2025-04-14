@@ -7,7 +7,7 @@ import RichText from "./RichText";
 
 const Heading1 = (data: Heading1BlockObjectResponse) => {
   return (
-    <h1 className="notion-heading-1">
+    <h1 className="my-6 text-3xl font-bold">
       {data.heading_1.rich_text.map((item, index) => {
         if (item.type === "text") {
           return <RichText key={index} {...item} />;
@@ -20,7 +20,7 @@ const Heading1 = (data: Heading1BlockObjectResponse) => {
 
 const Heading2 = (data: Heading2BlockObjectResponse) => {
   return (
-    <h2 className="notion-heading-2">
+    <h2 className="my-5 text-2xl font-bold">
       {data.heading_2.rich_text.map((item, index) => {
         if (item.type === "text") {
           return <RichText key={index} {...item} />;
@@ -33,7 +33,7 @@ const Heading2 = (data: Heading2BlockObjectResponse) => {
 
 const Heading3 = (data: Heading3BlockObjectResponse) => {
   return (
-    <h3 className="notion-heading-3">
+    <h3 className="my-4 text-xl font-bold">
       {data.heading_3.rich_text.map((item, index) => {
         if (item.type === "text") {
           return <RichText key={index} {...item} />;

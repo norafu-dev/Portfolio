@@ -9,7 +9,7 @@ export default (data: RichTextItemResponse) => {
         target="_blank"
         rel="noreferrer"
         href={data.href}
-        className="cursor-pointer hover:text-indigo-400"
+        className="cursor-pointer hover:notion-color-blue"
       >
         {result}
       </a>
@@ -24,7 +24,7 @@ export default (data: RichTextItemResponse) => {
         target="_blank"
         rel="noreferrer"
         href={data.mention.link_mention.href}
-        className="flex items-center gap-2 transition-all duration-300 cursor-pointer hover:text-indigo-400 w-fit"
+        className="flex items-center gap-2 transition-all duration-300 cursor-pointer hover:notion-color-blue w-fit"
       >
         {icon && (
           <span className="block w-5 h-5 overflow-hidden rounded-md">
@@ -60,7 +60,7 @@ export default (data: RichTextItemResponse) => {
 
   if (data.annotations.code) {
     return (
-      <code className="p-1 mx-0.5 text-sm text-indigo-400 bg-gray-100 rounded-md">
+      <code className="p-1 mx-0.5 text-sm notion-color-blue bg-gray-100 rounded-md">
         {result}
       </code>
     );

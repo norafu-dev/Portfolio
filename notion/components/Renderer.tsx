@@ -8,30 +8,16 @@ const Renderer = async ({ pageId }: { pageId: string }) => {
   const getBlocksByPageId = getBlocks(pageId);
   const blocks = await getBlocksByPageId();
   const processedBlocks = processBlocks(blocks);
-  const blockTypes: string[] = [];
-
-  blocks.map((block) => {
-    if ("type" in block && !blockTypes.includes(block.type)) {
-      blockTypes.push(block.type);
-    }
-  });
 
   return (
-    <div className="max-w-screen overflow-x-hidden">
-      {/* Block Types */}
-      <ul>
-        {blockTypes.map((type, index) => {
-          return <li key={index}>{type}</li>;
-        })}
-      </ul>
-
+    <div className="overflow-x-hidden max-w-screen">
       {/* Block Renderers */}
       {processedBlocks.map((block) => {
         return (
           <Suspense
             key={block.id}
             fallback={
-              <div className="h-12 bg-gray-100 animate-pulse rounded-md my-2" />
+              <div className="h-12 my-2 bg-gray-100 rounded-md animate-pulse" />
             }
           >
             {renderBlock(block)}

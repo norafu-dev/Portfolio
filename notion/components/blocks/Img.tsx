@@ -11,11 +11,11 @@ const Img = (data: ImageBlockObjectResponse) => {
       : "";
 
   return (
-    <div className="">
+    <div className="mb-2">
       <ImagePlaceholder
         url={imageUrl}
         alt={caption || "Notion image"}
-        containerClassName="relative w-full mb-2 rounded-lg overflow-hidden"
+        containerClassName="relative w-full rounded-md overflow-hidden"
         imageClassName="object-contain"
       />
       {caption && (

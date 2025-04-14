@@ -1,56 +1,3 @@
-/* Notion Blocks 样式 */
-
-/* 标题样式 */
-.notion-heading-1 {
-  @apply mb-4 text-4xl font-bold;
-}
-
-.notion-heading-2 {
-  @apply mb-3 text-3xl font-bold;
-}
-
-.notion-heading-3 {
-  @apply mb-2 text-2xl font-bold;
-}
-
-/* 段落样式 */
-.notion-paragraph {
-  @apply mb-4;
-}
-
-/* 列表样式 */
-.notion-bulleted-list {
-  @apply pl-6 mb-4 list-disc;
-}
-
-.notion-numbered-list {
-  @apply pl-6 mb-4 list-decimal;
-}
-
-/* 引用样式 */
-.notion-quote {
-  @apply pl-4 my-4 italic border-l-4 border-gray-300;
-}
-
-/* 图片样式 */
-.notion-image {
-  @apply my-4 rounded-md;
-}
-
-/* 折叠样式 */
-.notion-toggle {
-  @apply mb-2;
-}
-
-.notion-toggle-content {
-  @apply pl-6 mt-2;
-}
-
-/* 书签样式 */
-.notion-bookmark {
-  @apply p-4 my-4 border border-gray-200 rounded-md;
-}
-
 /* 文字颜色样式 */
 .notion-text-red {
   @apply text-red-500;
@@ -122,7 +69,7 @@ type ApiColor =
 }
 
 .notion-color-blue {
-  @apply text-blue-500;
+  color: #4479e2;
 }
 
 .notion-color-purple {
@@ -134,7 +81,7 @@ type ApiColor =
 }
 
 .notion-color-red {
-  @apply text-rose-600;
+  color: #dd4a68;
 }
 
 .notion-color-gray_background {
