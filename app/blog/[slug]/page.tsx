@@ -1,8 +1,8 @@
 import { Suspense } from "react";
 import { notFound } from "next/navigation";
-import getDatabase from "@/notion/lib/getDatabase";
+import getDatabase from "@/notion/utils/api/getDatabase";
 import ViewCounter from "@/components/ViewCounter";
-import Renderer from "@/notion/Renderer";
+import Renderer from "@/notion/components/Renderer";
 
 const page = async ({ params }: { params: Promise<{ slug: string }> }) => {
   const { slug } = await params;

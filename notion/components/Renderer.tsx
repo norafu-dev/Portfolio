@@ -1,8 +1,8 @@
 import { Suspense } from "react";
-import getBlocks from "@/notion/lib/getBlocks";
-import Toggle from "@/notion/blocks/Toggle";
-import { renderBlock } from "@/notion/registry";
-import { processBlocks } from "@/notion/processBlocks";
+import getBlocks from "@/notion/utils/api/getBlocks";
+import Toggle from "@/notion/components/blocks/Toggle";
+import { renderBlock } from "@/notion/utils/blocks/registry";
+import { processBlocks } from "@/notion/utils/blocks/processBlocks";
 
 const Renderer = async ({ pageId }: { pageId: string }) => {
   const getBlocksByPageId = getBlocks(pageId);

@@ -1,6 +1,6 @@
 import { ImageBlockObjectResponse } from "@notionhq/client/build/src/api-endpoints";
 import ImagePlaceholder from "@/components/ImagePlaceholder";
-import { mapNotionImageUrl } from "@/notion/lib/mapImageUrl";
+import { mapNotionImageUrl } from "@/notion/utils/api/mapImageUrl";
 
 const Img = (data: ImageBlockObjectResponse) => {
   const imageUrl = mapNotionImageUrl({ id: data.id, cover: data.image });

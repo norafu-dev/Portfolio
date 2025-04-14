@@ -1,12 +1,15 @@
 // import dynamic from "next/dynamic";
-import { FilteredBlockResponse } from "@/notion/types";
-import { ProcessedBlock } from "@/notion/processBlocks";
+import { ProcessedBlock } from "@/notion/utils/blocks/processBlocks";
 
-import { Heading1, Heading2, Heading3 } from "@/notion/blocks/Headings";
-import Paragraph from "@/notion/blocks/Paragraph";
-import Img from "@/notion/blocks/Img";
-import NumberedList from "@/notion/blocks/NumberList";
-import BulletList from "@/notion/blocks/BulletList";
+import {
+  Heading1,
+  Heading2,
+  Heading3,
+} from "@/notion/components/blocks/Headings";
+import Paragraph from "@/notion/components/blocks/Paragraph";
+import Img from "@/notion/components/blocks/Img";
+import NumberedList from "@/notion/components/blocks/NumberList";
+import BulletList from "@/notion/components/blocks/BulletList";
 
 export const blockComponents = {
   heading_1: Heading1,
@@ -27,7 +30,7 @@ export const renderBlock = (block: ProcessedBlock) => {
     return (
       <div>
         not supported block type:
-        <span className="text-rose-400"> {block.type}</span>
+        <span className="notion-color-red"> {block.type}</span>
       </div>
     );
   }

@@ -1,4 +1,4 @@
-import notion from "@/notion/lib/client";
+import notion from "@/notion/utils/api/client";
 import { unstable_cache } from "next/cache";
 import { FilteredBlockResponse } from "@/notion/types";
 

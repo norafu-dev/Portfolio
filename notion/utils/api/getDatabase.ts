@@ -1,8 +1,8 @@
 import { idToUuid } from "@/lib/utils";
-import notion from "@/notion/lib/client";
+import notion from "@/notion/utils/api/client";
 import { unstable_cache } from "next/cache";
 import { PageProps } from "@/notion/types";
-import { mapNotionImageUrl } from "@/notion/lib/mapImageUrl";
+import { mapNotionImageUrl } from "@/notion/utils/api/mapImageUrl";
 
 const databaseId = idToUuid(process.env.NOTION_DATABASE_ID);
 

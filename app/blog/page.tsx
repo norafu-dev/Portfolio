@@ -1,4 +1,4 @@
-import getDatabase from "@/notion/lib/getDatabase";
+import getDatabase from "@/notion/utils/api/getDatabase";
 import Link from "next/link";
 import ImagePlaceholder from "@/components/ImagePlaceholder";
 
