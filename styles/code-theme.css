@@ -35,7 +35,7 @@ pre[class*="language-"] {
   hyphens: none;
 
   background: #faf8f5;
-  color: #728fcb; /* 深蓝色文本 */
+  color: #4f5794;
 }
 
 /* 选中文本时的样式（其他浏览器） */
@@ -65,12 +65,12 @@ pre[class*="language-"] {
 .token.prolog,
 .token.doctype,
 .token.cdata {
-  color: #a5a2a2; /* 已经是灰色 */
+  color: #a1a1a1; /* 已经是灰色 */
 }
 
 /* 标点符号样式 */
 .token.punctuation {
-  color: #a5a2a2; /* 已经是灰色 */
+  color: #7f7e7e;
 }
 
 /* 命名空间样式 */
@@ -78,11 +78,15 @@ pre[class*="language-"] {
   opacity: 0.7;
 }
 
-/* 标签、运算符和数字样式 */
-.token.tag,
+/* 标签 */
+.token.tag {
+  color: #5686e4;
+}
+
+/* 运算符和数字样式 */
 .token.operator,
 .token.number {
-  color: #4654a5; /* 已经是蓝色 */
+  color: #7f7e7e;
 }
 
 /* 属性和函数样式 */
@@ -101,7 +105,7 @@ pre[class*="language-"] {
 /* JavaScript代码和属性名样式 */
 code.language-javascript,
 .token.attr-name {
-  color: #555555; /* 中灰色，替代中褐色 */
+  color: #555555;
 }
 
 /* CSS代码、布尔值、字符串等样式 */
@@ -115,20 +119,23 @@ code.language-scss,
 .language-scss .token.string,
 .style .token.string,
 .token.attr-value,
-.token.keyword,
 .token.control,
 .token.directive,
 .token.unit,
 .token.statement,
 .token.regex,
 .token.atrule {
-  color: #728fcb; /* 蓝色 */
+  color: #728fcb;
+}
+
+.token.keyword {
+  color: #4679c6;
 }
 
 /* 占位符和变量样式 */
 .token.placeholder,
 .token.variable {
-  color: #93abdc; /* 淡蓝色 */
+  color: #dd4a68;
 }
 
 /* 斜体样式 */
@@ -136,39 +143,12 @@ code.language-scss,
   font-style: italic;
 }
 
-/* 重要文本和粗体样式 */
-.token.important,
-.token.bold {
-  font-weight: bold; /* 粗体 */
-}
-
-/* 重要文本的颜色 */
-.token.important {
-  color: #555555; /* 中灰色，替代中褐色 */
-}
-
 /* 行号插件样式覆盖 */
 .line-numbers.line-numbers .line-numbers-rows {
-  border-right-color: #ffffff; /* 已经修改为白色 */
+  border-right-color: #ffffff;
 }
 
 /* 行号文本样式 */
 .line-numbers .line-numbers-rows > span:before {
-  color: #a5a2a2; /* 已经是灰色 */
-}
-
-/* 行高亮插件样式覆盖 */
-.line-highlight.line-highlight {
-  /* 渐变背景：从左（深灰色半透明）到右（完全透明），替代浅褐色 */
-  background: rgba(51, 51, 51, 0.2);
-  background: -webkit-linear-gradient(
-    left,
-    rgba(51, 51, 51, 0.2) 70%,
-    rgba(51, 51, 51, 0)
-  );
-  background: linear-gradient(
-    to right,
-    rgba(51, 51, 51, 0.2) 70%,
-    rgba(51, 51, 51, 0)
-  );
+  color: #a5a2a2;
 }

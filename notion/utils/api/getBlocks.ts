@@ -26,7 +26,7 @@ const getBlocks = (pageId: string) =>
         return rest;
       });
 
-      console.dir(results, { depth: null });
+      // console.dir(results, { depth: null });
       return results;
     },
     [pageId],
