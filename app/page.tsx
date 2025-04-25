@@ -1,7 +1,9 @@
+import WaterWave from "@/components/water-wave/WaterWave";
+
 const Home = () => {
   return (
     <main>
-      <h1>Portfolio based on Next.js and Notion</h1>
+      <WaterWave />
     </main>
   );
 };
