@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useRef, useEffect, useState } from "react";
+import React, { useRef, useEffect } from "react";
 import * as THREE from "three";
 import {
   simulationVertexShader,
@@ -34,7 +34,6 @@ const WaterWave = () => {
   const renderQuadRef = useRef<THREE.Mesh | null>(null);
   const simQuadRef = useRef<THREE.Mesh | null>(null);
   const planeRef = useRef<THREE.PlaneGeometry | null>(null);
-  const [isInitialized, setIsInitialized] = useState(false);
 
   // 初始化Three.js
   useEffect(() => {
@@ -306,7 +305,6 @@ const WaterWave = () => {
 
         // 启动动画
         animate();
-        setIsInitialized(true);
 
         // 返回清理函数
         return () => {
@@ -400,8 +398,8 @@ const WaterWave = () => {
                   );
                 }
               }
-            } catch (e) {
-              console.error("清理渲染器时出错:", e);
+            } catch (error) {
+              console.error("清理渲染器时出错:", error);
             }
 
             rendererRef.current.dispose();
@@ -454,8 +452,8 @@ const WaterWave = () => {
 
       // 安全地设置文本渲染
       try {
-        (ctx as any).textRendering = "geometricPrecision";
-      } catch (e) {
+        (ctx as CanvasRenderingContext2D).textRendering = "geometricPrecision";
+      } catch {
         // 忽略不支持的属性
       }
 

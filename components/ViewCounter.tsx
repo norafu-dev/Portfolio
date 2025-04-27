@@ -41,7 +41,7 @@ const ViewCounter = ({
     };
 
     handlePageView();
-  }, [pageId, slug, noCount]);
+  }, [pageId, slug, noCount, supabase]);
 
   return <div>{views} views</div>;
 };
