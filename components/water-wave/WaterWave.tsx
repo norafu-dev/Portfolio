@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useRef, useEffect } from "react";
+import React, { useRef, useEffect, useState } from "react";
 import * as THREE from "three";
 import {
   simulationVertexShader,
@@ -8,15 +8,29 @@ import {
   renderVertexShader,
   renderFragmentShader,
 } from "./shaders";
+import { useTheme } from "next-themes";
 
 // 使用DOM原生事件类型
 type MouseEventType = MouseEvent;
 type TouchEventType = TouchEvent;
 
-const BACKGROUND_COLOR = "#fffdfa";
-const TEXT_COLOR = "#ff7a2e";
+const BACKGROUND_COLOR = {
+  light: "#fffdfa",
+  dark: "#31322d",
+};
+const TEXT_COLOR = {
+  light: "#ff7a2e",
+  dark: "#fffdfa",
+};
 
 const WaterWave = () => {
+  const { theme } = useTheme();
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
   // 引用
   const containerRef = useRef<HTMLDivElement>(null);
   const sceneRef = useRef<THREE.Scene | null>(null);
@@ -438,12 +452,14 @@ const WaterWave = () => {
       }
 
       // 绘制背景
-      ctx.fillStyle = BACKGROUND_COLOR;
+      ctx.fillStyle =
+        BACKGROUND_COLOR[(mounted ? theme : "light") as "light" | "dark"];
       ctx.fillRect(0, 0, width, height);
 
       // 绘制文本 - 使用和原始代码相同的尺寸计算和字体
       const fontSize = Math.round(250 * window.devicePixelRatio);
-      ctx.fillStyle = TEXT_COLOR;
+      ctx.fillStyle =
+        TEXT_COLOR[(mounted ? theme : "light") as "light" | "dark"];
       ctx.font = `bold ${fontSize}px Arial, sans-serif`;
       ctx.textAlign = "center";
       ctx.textBaseline = "middle";

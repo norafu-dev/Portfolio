@@ -1,4 +1,5 @@
 import Link from "next/link";
+import ModeToggle from "./ModeToggle";
 
 const ROUTES = [
   {
@@ -24,6 +25,7 @@ const Navbar = () => {
             <Link href={route.href}>{route.label}</Link>
           </li>
         ))}
+        <ModeToggle />
       </ul>
     </nav>
   );

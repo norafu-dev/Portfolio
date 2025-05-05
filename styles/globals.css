@@ -8,11 +8,15 @@
   --font-lxgw: "LXGW WenKai";
 }
 
+.dark {
+  --background: #31322d;
+  --foreground: #fffdfa;
+}
+
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #4e4e4e;
-    --foreground: #fffefa;
-    /* --foreground: #fefcf4; */
+    --background: #31322d;
+    --foreground: #fffdfa;
   }
 }
 
