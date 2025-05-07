@@ -323,7 +323,6 @@ const WaterWave = () => {
         // 返回清理函数
         return () => {
           mountedAndReady = false;
-          console.log("清理Three.js资源");
 
           // 停止动画
           if (rafRef.current) {
@@ -428,7 +427,7 @@ const WaterWave = () => {
           cameraRef.current = null;
         };
       } catch (error) {
-        console.error("初始化Three.js时出错:", error);
+        console.error("init error:", error);
         return () => {};
       }
     };
@@ -460,7 +459,7 @@ const WaterWave = () => {
       const fontSize = Math.round(250 * window.devicePixelRatio);
       ctx.fillStyle =
         TEXT_COLOR[(mounted ? theme : "light") as "light" | "dark"];
-      ctx.font = `bold ${fontSize}px Arial, sans-serif`;
+      ctx.font = `bold ${fontSize}px Loreka`;
       ctx.textAlign = "center";
       ctx.textBaseline = "middle";
       ctx.imageSmoothingEnabled = true;

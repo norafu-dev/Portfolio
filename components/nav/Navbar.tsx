@@ -1,32 +1,13 @@
 import Link from "next/link";
-import ModeToggle from "./ModeToggle";
-
-const ROUTES = [
-  {
-    label: "Home",
-    href: "/",
-  },
-  {
-    label: "Project",
-    href: "/project",
-  },
-  {
-    label: "Blog",
-    href: "/blog",
-  },
-];
+import Menu from "./Menu";
 
 const Navbar = () => {
   return (
-    <nav>
-      <ul className="fixed top-0 left-0 right-0 z-50 flex items-center justify-center gap-8 py-4 mb-6 text-xl text-semibold">
-        {ROUTES.map((route) => (
-          <li key={route.href}>
-            <Link href={route.href}>{route.label}</Link>
-          </li>
-        ))}
-        <ModeToggle />
-      </ul>
+    <nav className="fixed left-0 right-0 z-50 flex items-start justify-between gap-8 px-4 py-4 mb-6 text-semibold font-loreka">
+      <Link href="/" className="flex items-center h-7">
+        HOME
+      </Link>
+      <Menu />
     </nav>
   );
 };

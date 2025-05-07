@@ -5,12 +5,17 @@
 :root {
   --background: #fffdfa;
   --foreground: #31322d;
+  --color-primary: #ff7d31;
+  --color-secondary: #c2ebc4;
   --font-lxgw: "LXGW WenKai";
+  --font-loreka: "Loreka";
 }
 
 .dark {
   --background: #31322d;
   --foreground: #fffdfa;
+  --color-primary: #ff7d31;
+  --color-secondary: #c2ebc4;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -20,16 +25,19 @@
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: var(--font-lxgw);
+@layer base {
+  body {
+    @apply text-foreground bg-background;
+  }
 }
 
 @theme {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
+  --color-primary: var(--color-primary);
+  --color-secondary: var(--color-secondary);
   --font-lxgw: var(--font-lxgw);
+  --font-loreka: var(--font-loreka);
 }
 
 @utility text-semibold {
