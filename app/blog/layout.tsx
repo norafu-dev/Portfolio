@@ -3,5 +3,10 @@ export default function BlogLayout({
 }: {
   children: React.ReactNode;
 }) {
-  return <div className="mt-20 font-lxgw">{children}</div>;
+  return (
+    <div className="font-lxgw">
+      <div className="h-20"></div>
+      {children}
+    </div>
+  );
 }
