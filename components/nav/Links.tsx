@@ -50,10 +50,8 @@ const slideIn = {
 };
 
 const Links = ({
-  isActive,
   setIsActive,
 }: {
-  isActive: boolean;
   setIsActive: (value: boolean | ((prevState: boolean) => boolean)) => void;
 }) => {
   return (

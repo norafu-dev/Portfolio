@@ -35,7 +35,7 @@ const Menu = () => {
         initial="closed"
       >
         <AnimatePresence>
-          {isActive && <Links isActive={isActive} setIsActive={setIsActive} />}
+          {isActive && <Links setIsActive={setIsActive} />}
         </AnimatePresence>
       </motion.div>
     </div>

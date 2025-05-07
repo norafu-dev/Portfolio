@@ -2,8 +2,6 @@
 "use client";
 
 import { motion } from "motion/react";
-import { useEffect } from "react";
-import { usePathname } from "next/navigation";
 
 export default function Button({
   isActive,
@@ -12,10 +10,6 @@ export default function Button({
   isActive: boolean;
   setIsActive: (value: boolean | ((prevState: boolean) => boolean)) => void;
 }) {
-  const pathname = usePathname();
-  useEffect(() => {
-    setIsActive(false);
-  }, [pathname]);
   return (
     <div className="absolute z-10 overflow-hidden text-sm rounded-md cursor-pointer top-2 right-2 duration-400 h-7 w-15">
       <motion.div
