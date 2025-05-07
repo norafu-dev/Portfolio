@@ -50,7 +50,13 @@ const Code = (data: CodeBlockObjectResponse) => {
         </button>
       </div>
       <pre className="p-6 overflow-x-auto line-numbers">
-        <code ref={codeRef} className={`language-${language}`}>
+        <code
+          ref={codeRef}
+          className={`language-${language}`}
+          style={{
+            fontSize: window.innerWidth < 640 ? "14px" : "16px",
+          }}
+        >
           {codeText}
         </code>
       </pre>

@@ -6,7 +6,7 @@ const page = async () => {
   const database = await getDatabase();
 
   return (
-    <main className="flex flex-col items-center max-w-2xl mx-auto ">
+    <main className="flex flex-col items-center max-w-2xl mx-auto">
       <div className="h-20"></div>
       <ul className="flex items-center justify-end w-full gap-4 mb-4">
         <li>
