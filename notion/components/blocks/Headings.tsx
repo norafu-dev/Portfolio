@@ -7,7 +7,7 @@ import RichText from "./RichText";
 
 const Heading1 = (data: Heading1BlockObjectResponse) => {
   return (
-    <h1 className="my-6 text-3xl font-medium">
+    <h1 className="my-6 text-2xl font-medium sm:text-3xl">
       {data.heading_1.rich_text.map((item, index) => {
         if (item.type === "text") {
           return <RichText key={index} {...item} />;
@@ -20,7 +20,7 @@ const Heading1 = (data: Heading1BlockObjectResponse) => {
 
 const Heading2 = (data: Heading2BlockObjectResponse) => {
   return (
-    <h2 className="my-5 text-2xl font-medium">
+    <h2 className="my-5 text-xl font-medium sm:text-2xl">
       {data.heading_2.rich_text.map((item, index) => {
         if (item.type === "text") {
           return <RichText key={index} {...item} />;
@@ -33,7 +33,7 @@ const Heading2 = (data: Heading2BlockObjectResponse) => {
 
 const Heading3 = (data: Heading3BlockObjectResponse) => {
   return (
-    <h3 className="my-4 text-xl font-medium">
+    <h3 className="my-4 text-lg font-medium sm:text-xl">
       {data.heading_3.rich_text.map((item, index) => {
         if (item.type === "text") {
           return <RichText key={index} {...item} />;

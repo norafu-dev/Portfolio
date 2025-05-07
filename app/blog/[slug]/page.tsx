@@ -14,7 +14,7 @@ const page = async ({ params }: { params: Promise<{ slug: string }> }) => {
   }
 
   return (
-    <article className="max-w-2xl mx-auto">
+    <article className="w-full px-4 mx-auto sm:max-w-2xl">
       <div className="h-20"></div>
       <Header post={post} />
       <Suspense
