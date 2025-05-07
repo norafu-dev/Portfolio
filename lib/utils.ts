@@ -1,4 +1,4 @@
-export function cn(...args: any[]): string {
+export function cn(...args: string[]): string {
   return args.flat(Infinity).filter(Boolean).join(" ");
 }
 
