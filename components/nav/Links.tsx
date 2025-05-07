@@ -49,7 +49,13 @@ const slideIn = {
   exit: { opacity: 0, transition: { duration: 0.2, delay: 0.2 } },
 };
 
-const Links = () => {
+const Links = ({
+  isActive,
+  setIsActive,
+}: {
+  isActive: boolean;
+  setIsActive: (value: boolean | ((prevState: boolean) => boolean)) => void;
+}) => {
   return (
     <div className="flex flex-col justify-between h-full p-4">
       <ul className="flex flex-col gap-2 pt-12 text-xl">
@@ -64,7 +70,9 @@ const Links = () => {
               animate="enter"
               exit="exit"
             >
-              <Link href={path}>{label}</Link>
+              <Link href={path} onClick={() => setIsActive(false)}>
+                {label}
+              </Link>
             </motion.li>
           );
         })}
@@ -82,7 +90,9 @@ const Links = () => {
               exit="exit"
               className="text-xs"
             >
-              <Link href={path}>{label}</Link>
+              <Link href={path} onClick={() => setIsActive(false)}>
+                {label}
+              </Link>
             </motion.li>
           );
         })}
