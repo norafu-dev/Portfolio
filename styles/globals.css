@@ -1,4 +1,3 @@
-@import url("https://cdn.jsdelivr.net/npm/lxgw-wenkai-webfont@1.7.0/style.min.css");
 @import "tailwindcss";
 @import "./notion.css";
 
@@ -7,7 +6,7 @@
   --foreground: #31322d;
   --color-primary: #ff7d31;
   --color-secondary: #c2ebc4;
-  --font-lxgw: "LXGW WenKai";
+  --font-lxgw_mono: "LXGW WenKai Mono";
   --font-loreka: "Loreka";
 }
 
@@ -27,7 +26,7 @@
 
 @layer base {
   body {
-    @apply text-foreground bg-background font-lxgw;
+    @apply text-foreground bg-background;
   }
 }
 
@@ -36,14 +35,14 @@
   --color-foreground: var(--foreground);
   --color-primary: var(--color-primary);
   --color-secondary: var(--color-secondary);
-  --font-lxgw: var(--font-lxgw);
   --font-loreka: var(--font-loreka);
+  --font-lxgw_mono: var(--font-lxgw_mono);
 }
 
-@utility text-semibold {
-  -webkit-text-stroke: 0.15px currentColor;
+/* @utility text-semibold {
+  -webkit-text-stroke: 0.1px currentColor;
 }
 
 @utility text-bold {
-  -webkit-text-stroke: 0.3px currentColor;
-}
+  -webkit-text-stroke: 0.2px currentColor;
+} */

@@ -9,6 +9,22 @@ const loreka = localFont({
   display: "swap",
 });
 
+const lxgw_mono = localFont({
+  src: [
+    {
+      path: "../public/fonts/LXGWWenKaiMonoLite-Regular.woff2",
+      weight: "400",
+      style: "normal",
+    },
+    {
+      path: "../public/fonts/LXGWWenKaiMonoLite-Medium.woff2",
+      weight: "500",
+      style: "medium",
+    },
+  ],
+  display: "swap",
+});
+
 export const metadata: Metadata = {
   title: "Nora Fu",
   description: "Portfolio based on Next.js and Notion",
@@ -20,7 +36,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" suppressHydrationWarning className={loreka.className}>
+    <html
+      lang="en"
+      suppressHydrationWarning
+      className={`${loreka.className} ${lxgw_mono.className}`}
+    >
       <body>
         <ThemeProvider
           attribute="class"
