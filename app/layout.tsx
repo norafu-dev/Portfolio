@@ -19,7 +19,7 @@ const lxgw_mono = localFont({
     {
       path: "../public/fonts/LXGWWenKaiMonoLite-Medium.woff2",
       weight: "500",
-      style: "medium",
+      style: "normal",
     },
   ],
   display: "swap",
