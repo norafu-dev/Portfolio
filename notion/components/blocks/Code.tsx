@@ -36,7 +36,7 @@ const Code = (data: CodeBlockObjectResponse) => {
   }, [codeText, language]);
 
   return (
-    <section className="mb-6 p-2 bg-[#faf8f5] border-1 border-gray-300 rounded-md">
+    <section className="mt-2 mb-6 p-2 bg-[#faf8f5] border-1 border-gray-300 rounded-md text-sm sm:text-base">
       <div className="flex items-center justify-between pb-2 border-b border-gray-300">
         <h3>{codeCaption}</h3>
         <button
